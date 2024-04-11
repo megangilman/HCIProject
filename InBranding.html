@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>In Branding</title>
+
+    <script>
+        var InBrandingPalette = [];
+        var blue = "blue";
+        var red = "red";
+        var green = "green";
+    </script>
+
+</head>
+
+<body onLoad="initBody();"></body>
+    <!-- HTML5 article tag for content -->
+    <div id="content">
+   
+    <!-- HTML5 header tag for header -->
+    <header>
+        <!-- Navigation bar -->
+        <nav id="nav_bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Palettes.html">Palettes</a></li>
+            </ul>
+        </nav>
+        <!-- H1 means 1st level heading -->
+        <h1>Color in Branding</h1>
+
+    </header>
+
+
+   
+   <!-- P stands for paragraph -->
+   <p></p>
+
+    <!-- Display buttons -->
+    <button class="overview" onclick="showOverview();">Color Overview</button>
+    <button class="spaces" onclick="showMarketing();">Color in Marketing</button>
+
+
+    <container id="overview">
+        <h2>Color Overview</h2>
+        <p>Color is a visual perceptual property derived from the spectrum of light interacting in the eye with the spectral sensitivities of the light receptors. Color categories and physical specifications of color are associated with objects through the wavelength of the light that is reflected, transmitted, or emitted. This reflection is governed by the object's physical properties such as light absorption, emission spectra, etc.</p>
+    </container>
+
+    <container id="marketing">
+        <h2>Color in Marketing</h2>
+        <p>Color is a powerful tool in marketing and branding. It can influence consumer perceptions, emotions, and behaviors. Different colors can evoke different feelings and associations. For example, red is often associated with passion, energy, and excitement, while blue is associated with trust, reliability, and calmness. Companies use color to create brand identities, communicate messages, and attract customers. The choice of color in branding can have a significant impact on consumer attitudes and purchasing decisions.</p>
+
+        <h3>Blue</h3>
+        <button class = "marketing" onclick="AddtoInBrandingPalette(blue);">Add Color</button>
+
+        <h3>Red</h3>
+        <button class = "marketing" onclick="AddtoInBrandingPalette(red);">Add Color</button>
+
+        <h3>Green</h3>
+        <button class = "marketing" onclick="AddtoInBrandingPalette(green);">Add Color</button>
+
+    </container>
+   
+
+   <footer>CS3041: Human-Computer Interaction </footer>
+    </div>
+
+    <script>
+        function initBody() {
+            document.getElementById("overview").style.display = "block";
+            document.getElementById("marketing").style.display = "none";
+        }
+
+
+        function showMarketing() {
+            document.getElementById("marketing").style.display = "block";
+            document.getElementById("overview").style.display = "none";
+
+        }
+
+        function showOverview() {
+            document.getElementById("overview").style.display = "block";
+            document.getElementById("marketing").style.display = "none";
+        }
+
+        function AddtoInBrandingPalette(color) {
+        if (InBrandingPalette == null){
+            InBrandingPalette = [];
+        } 
+        else {
+            InBrandingPalette = JSON.parse(localStorage.getItem("InBrandingPalette"));
+        }
+
+        //add color to palette
+        InBrandingPalette.push(color);
+
+          // Update local storage with the new palette array
+        localStorage.setItem('InBrandingPalette', JSON.stringify(InBrandingPalette));
+
+        //create div for color
+        var div = document.createElement("div");
+        div.style.backgroundColor = color;
+        div.style.width = "100px";
+        div.style.height = "100px";
+        document.body.appendChild(div);
+
+        }
+
+    </script>
+
+</body>
+</html>

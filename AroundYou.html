@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Color Around You</title>
+
+    <script>
+        var AroundYouPalette = [];
+        var blue = "blue";
+        var red = "red";
+        var green = "green";
+        var yellow = "yellow";
+        var orange = "orange";
+        var purple = "purple";
+        var pink = "pink";
+    </script>
+
+</head>
+
+<body onLoad="initBody();">
+    <!-- HTML5 article tag for content -->
+    <div id="content">
+   
+    <header>
+        <!-- Navigation bar -->
+        <nav id="nav_bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Palettes.html">Palettes</a></li>
+            </ul>
+        </nav>
+        <!-- H1 means 1st level heading -->
+        <h1>Color Around You</h1>
+
+    </header>
+    
+   <!-- P stands for paragraph -->
+   <p></p>
+
+    <!-- Display buttons -->
+    <button class="overview" onclick="showOverview();">Color Overview</button>
+    <button class="spaces" onclick="showSpaces();">Color in Spaces</button>
+
+
+    <container id="overview">
+        <h2>Color Overview</h2>
+        <p>Color is a visual perceptual property derived from the spectrum of light interacting in the eye with the spectral sensitivities of the light receptors. Color categories and physical specifications of color are associated with objects through the wavelength of the light that is reflected, transmitted, or emitted. This reflection is governed by the object's physical properties such as light absorption, emission spectra, etc.</p>
+    </container>
+
+    <container id="spaces">
+        <h2>Color in Spaces</h2>
+        <p>Color in spaces is a design element that can influence the mood and perception of a space. The color of a room can affect the way people feel and behave. For example, warm colors like red, orange, and yellow can create a cozy and intimate atmosphere, while cool colors like blue and green can create a calm and relaxing environment. Color can also be used to define different areas within a space, create focal points, and highlight architectural features.</p>
+
+        <h3>Pink</h3>
+        <button class = "spaces" onclick="AddtoAroundYouPalette(pink);">Add Color</button>
+
+        <h3>Blue</h3>
+        <button class = "spaces" onclick="AddtoAroundYouPalette(blue);">Add Color</button>
+
+        <h3>Red</h3>
+        <button class = "spaces" onclick="AddtoAroundYouPalette(red);">Add Color</button>
+
+        <h3>Green</h3>
+        <button class = "spaces" onclick="AddtoAroundYouPalette(green);">Add Color</button>
+
+    </container>
+    
+   
+
+   <footer>CS3041: Human-Computer Interaction </footer>
+    </div>
+
+    <script>
+        function initBody() {
+            document.getElementById("overview").style.display = "block";
+            document.getElementById("spaces").style.display = "none";
+        }
+
+
+        function showSpaces() {
+            document.getElementById("spaces").style.display = "block";
+            document.getElementById("overview").style.display = "none";
+
+        }
+
+        function showOverview() {
+            document.getElementById("overview").style.display = "block";
+            document.getElementById("spaces").style.display = "none";
+        }
+
+        function AddtoAroundYouPalette(color) {
+
+        if (AroundYouPalette == null){
+            AroundYouPalette = [];
+        } 
+        else {
+            AroundYouPalette = JSON.parse(localStorage.getItem("AroundYouPalette"));
+        }
+
+        //add color to palette
+        AroundYouPalette.push(color);
+
+          // Update local storage with the new palette array
+        localStorage.setItem('AroundYouPalette', JSON.stringify(AroundYouPalette));
+
+        //create div for color
+        var div = document.createElement("div");
+        div.style.backgroundColor = color;
+        div.style.width = "100px";
+        div.style.height = "100px";
+        document.body.appendChild(div);
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

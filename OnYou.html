@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title> Color on You </title>
+
+    
+    <script>
+        var OnYouPalette = [];
+        var blue = "blue";
+        var red = "red";
+        var green = "green";
+    </script>
+
+</head>
+
+<body onLoad="initBody();">
+    <!-- HTML5 article tag for content -->
+    <div id="content">
+   
+    <header>
+        <!-- Navigation bar -->
+        <nav id="nav_bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Palettes.html">Palettes</a></li>
+            </ul>
+        </nav>
+        <!-- H1 means 1st level heading -->
+        <h1>Color on You</h1>
+
+    </header>
+
+
+
+    <!-- Button to go back to the home page -->
+   <button class="home" onclick="location.href='index.html';">Back</button>
+
+   <!-- P stands for paragraph -->
+   <p></p>
+
+    <!-- Display buttons -->
+    <button class="overview" onclick="showOverview();">Color Overview</button>
+    <button class="season" onclick="showSeason();">Color Season</button>
+    <button class="perception" onclick="showPerception();">Color Perception</button>
+
+
+    <container id="overview">
+        <h2>Color Overview</h2>
+        <p>Color is a visual perceptual property derived from the spectrum of light interacting in the eye with the spectral sensitivities of the light receptors. Color categories and physical specifications of color are associated with objects through the wavelength of the light that is reflected, transmitted, or emitted. This reflection is governed by the object's physical properties such as light absorption, emission spectra, etc.</p>
+    </container>
+
+    <container id="perception">
+        <h2>Color Perception</h2>
+        <p>Color perception is the ability of the brain to interpret the visible spectrum of light. The human eye can differentiate between 10 million colors. The perception of color is influenced by the surrounding environment, the light source, and the individual's age
+        </p>
+
+        <h3>Green </h3>
+        <button class = "perception" onclick="AddtoOnYouPalette(green);">Add Color</button>
+
+    </container>
+
+    <container id="season">
+        <h2>Color Season</h2>
+        <p>Color theory is a practical guidance to color mixing and the visual effects of a specific color combination. It is used to create aesthetically pleasing color schemes. The traditional color wheel is a visual representation of color theory. It is divided into three categories: primary colors, secondary colors, and tertiary colors. The color wheel is used to create color schemes that are visually appealing.</p>
+
+        <h3>Blue</h3>
+
+        <button class = "season" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+
+        <h3>Red</h3>
+        <button class = "season" onclick="AddtoOnYouPalette(red);">Add Color</button>
+
+
+
+
+    </container>
+
+   
+
+
+
+   <footer>CS3041: Human-Computer Interaction </footer>
+    </div>
+
+    <script>
+        function initBody() {
+            document.getElementById("overview").style.display = "block";
+            document.getElementById("season").style.display = "none";
+            document.getElementById("perception").style.display = "none";
+        }
+
+
+        function showSeason() {
+            document.getElementById("season").style.display = "block";
+            document.getElementById("overview").style.display = "none";
+            document.getElementById("perception").style.display = "none";
+
+        }
+
+        function showPerception() {
+            document.getElementById("perception").style.display = "block";
+            document.getElementById("overview").style.display = "none";
+            document.getElementById("season").style.display = "none";
+
+        }
+
+        function showOverview() {
+            document.getElementById("overview").style.display = "block";
+            document.getElementById("season").style.display = "none";
+            document.getElementById("perception").style.display = "none";
+
+        }
+
+        function AddtoOnYouPalette(color) {
+
+        if (OnYouPalette == null){
+            OnYouPalette = [];
+        } 
+        else {
+            OnYouPalette = JSON.parse(localStorage.getItem("OnYouPalette"));
+        }
+
+        //add color to palette
+        OnYouPalette.push(color);
+
+          // Update local storage with the new palette array
+        localStorage.setItem('OnYouPalette', JSON.stringify(OnYouPalette));
+
+        //create div for color
+        var div = document.createElement("div");
+        div.style.backgroundColor = color;
+        div.style.width = "100px";
+        div.style.height = "100px";
+        document.body.appendChild(div);
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>

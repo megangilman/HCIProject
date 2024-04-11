@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title> Palettes </title>
+
+</head>
+
+<body onLoad="initPaletteOnYou(); initPaletteAroundYou(); initPaletteInBranding()"> 
+    <!-- HTML5 article tag for content -->
+    <div id="content">
+   
+
+    <!-- HTML5 header tag for header -->
+    <header>
+        <!-- Navigation bar -->
+        <nav id="nav_bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+        <!-- H1 means 1st level heading -->
+        <h1>Your Palettes</h1>
+
+    </header>
+
+    <h2>Color On You Palette</h2>
+        <div id="OnYouPaletteDiv"></div>
+        <button onclick="exportDivContentOnYou()">Export Palette</button>
+
+    <h2>Color Around You Palette</h2>
+        <div id="AroundYouPaletteDiv"></div>
+        <button onclick="exportDivContentAroundYou()">Export Palette</button>
+
+    <h2>Color in Branding Palette</h2>
+        <div id="InBrandingPaletteDiv"></div>
+        <button onclick="exportDivContentInBranding()">Export Palette</button>
+   
+   
+
+   <footer>CS3041: Human-Computer Interaction </footer>
+    </div>
+
+    <script>
+
+
+        function initPaletteOnYou(){
+
+            if(localStorage.getItem("OnYouPalette") == null){
+                localStorage.setItem("OnYouPalette", JSON.stringify(OnYouPalette));
+            }
+            else{
+                OnYouPalette = JSON.parse(localStorage.getItem("OnYouPalette"));
+            }
+
+            var OnYouPaletteDiv = document.getElementById("OnYouPaletteDiv");
+
+            for (var color of OnYouPalette){
+                var div = document.createElement("div");
+                div.style.backgroundColor = color;
+                div.style.width = "100px";
+                div.style.height = "100px";
+                OnYouPaletteDiv.appendChild(div);
+            }
+        }
+
+        function initPaletteAroundYou(){ 
+            if(localStorage.getItem("AroundYouPalette") == null){
+                localStorage.setItem("AroundYouPalette", JSON.stringify(AroundYouPalette));
+            }
+            else{
+                AroundYouPalette = JSON.parse(localStorage.getItem("AroundYouPalette"));
+            }
+
+            var AroundYouPaletteDiv = document.getElementById("AroundYouPaletteDiv");
+
+            for (var color of AroundYouPalette){
+                var div = document.createElement("div");
+                div.style.backgroundColor = color;
+                div.style.width = "100px";
+                div.style.height = "100px";
+                AroundYouPaletteDiv.appendChild(div);
+            }
+        }
+
+        function initPaletteInBranding(){ 
+            if(localStorage.getItem("InBrandingPalette") == null){
+                localStorage.setItem("InBrandingPalette", JSON.stringify(InBrandingPalette));
+            }
+            else{
+                InBrandingPalette = JSON.parse(localStorage.getItem("InBrandingPalette"));
+            }
+
+            var InBrandingPaletteDiv = document.getElementById("InBrandingPaletteDiv");
+
+            for (var color of InBrandingPalette){
+                var div = document.createElement("div");
+                div.style.backgroundColor = color;
+                div.style.width = "100px";
+                div.style.height = "100px";
+                InBrandingPaletteDiv.appendChild(div);
+            }
+        }
+
+        function exportDivContentOnYou() {
+        // Get the content of the div
+        var content = document.getElementById('OnYouPaletteDiv').innerHTML;
+        // Stylesheets
+        var stylesheets = '<link rel="stylesheet" type="text/css" href="style.css">';
+        // Full content
+        var fullContent = `<!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        ${stylesheets}
+        </head>
+        <body>
+        <h1>Your On You Palette</h1>
+        <div id="OnYouPaletteDiv" style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start;">
+            ${content}
+        </div>
+        </body>
+        </html>`;
+        // Create a Blob with the fullContent
+        var blob = new Blob([fullContent], { type: 'text/html' });
+        // Create a link element
+        var downloadLink = document.createElement('a');
+        downloadLink.download = 'on-you-palette.html';
+        //URL for the blob
+        downloadLink.href = window.URL.createObjectURL(blob);
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        }
+
+        function exportDivContentAroundYou() {
+        // Get the content of the div
+        var content = document.getElementById('AroundYouPaletteDiv').innerHTML;
+        // Stylesheets
+        var stylesheets = '<link rel="stylesheet" type="text/css" href="style.css">';
+        // Full content
+        var fullContent = `<!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        ${stylesheets}
+        </head>
+        <body>
+        <h1>Your Around You Palette</h1>
+        <div id="AroundYouPaletteDiv" style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start;">
+            ${content}
+        </div>
+        </body>
+        </html>`;
+        // Create a Blob with the fullContent
+        var blob = new Blob([fullContent], { type: 'text/html' });
+        // Create a link element
+        var downloadLink = document.createElement('a');
+        downloadLink.download = 'around-you-palette.html';
+        //URL for the blob
+        downloadLink.href = window.URL.createObjectURL(blob);
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        }
+
+        function exportDivContentInBranding() {
+        // Get the content of the div
+        var content = document.getElementById('InBrandingPaletteDiv').innerHTML;
+        // Stylesheets
+        var stylesheets = '<link rel="stylesheet" type="text/css" href="style.css">';
+
+        // Full content
+        var fullContent = `<!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        ${stylesheets}
+        </head>
+        <body>
+        <h1>Your Branding Palette</h1>
+        <div id="InBrandingPaletteDiv" style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start;">
+            ${content}
+        </div>
+        </body>
+        </html>`;
+        // Create a Blob with the fullContent
+        var blob = new Blob([fullContent], { type: 'text/html' });
+        // Create a link element
+        var downloadLink = document.createElement('a');
+        downloadLink.download = 'branding-palette.html';
+        //URL for the blob
+        downloadLink.href = window.URL.createObjectURL(blob);
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        }
+
+    </script>
+</body>
+</html>
