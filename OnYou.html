@@ -28,6 +28,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Palettes.html">Palettes</a></li>
+                <li><a href="AroundYou.html">Around You</a></li>
+                <li><a href="InBranding.html">In Branding</a></li>
             </ul>
         </nav>
         <!-- H1 means 1st level heading -->
@@ -38,15 +40,18 @@
 
 
     <!-- Button to go back to the home page -->
-   <button class="home" onclick="location.href='index.html';">Back</button>
+   
 
    <!-- P stands for paragraph -->
    <p></p>
 
+
     <!-- Display buttons -->
-    <button class="overview" onclick="showOverview();">Color Overview</button>
-    <button class="season" onclick="showSeason();">Color Season</button>
-    <button class="perception" onclick="showPerception();">Color Perception</button>
+    <div class="button-container">
+        <button id="overview-button" class="overview" onclick="showOverview();">Color Overview</button>
+        <button id="season-button" class="season" onclick="showSeason();">Color Season</button>
+        <button id="perception-button" class="perception" onclick="showPerception();">Color Perception</button>
+    </div>
 
 
     <container id="overview">
@@ -83,8 +88,9 @@
    
 
 
+    <!-- <footer>CS3041: Human-Computer Interaction </footer> -->
 
-   <footer>CS3041: Human-Computer Interaction </footer>
+   
     </div>
 
     <script>
@@ -92,6 +98,8 @@
             document.getElementById("overview").style.display = "block";
             document.getElementById("season").style.display = "none";
             document.getElementById("perception").style.display = "none";
+
+            showOverview(); 
         }
 
 
@@ -100,6 +108,8 @@
             document.getElementById("overview").style.display = "none";
             document.getElementById("perception").style.display = "none";
 
+            setActiveButton('season-button');
+
         }
 
         function showPerception() {
@@ -107,6 +117,7 @@
             document.getElementById("overview").style.display = "none";
             document.getElementById("season").style.display = "none";
 
+            setActiveButton('perception-button');
         }
 
         function showOverview() {
@@ -114,31 +125,55 @@
             document.getElementById("season").style.display = "none";
             document.getElementById("perception").style.display = "none";
 
+            setActiveButton('overview-button');
+
         }
 
         function AddtoOnYouPalette(color) {
 
-        if (OnYouPalette == null){
-            OnYouPalette = [];
-        } 
-        else {
-            OnYouPalette = JSON.parse(localStorage.getItem("OnYouPalette"));
+        var bool=confirm("Are you sure?");
+
+        /*if the user clicked ok execute the following*/
+        if(bool==true){
+
+            if (OnYouPalette == null){
+                OnYouPalette = [];
+            } 
+            else {
+                OnYouPalette = JSON.parse(localStorage.getItem("OnYouPalette"));
+            }
+
+            //add color to palette
+            OnYouPalette.push(color);
+
+            // Update local storage with the new palette array
+            localStorage.setItem('OnYouPalette', JSON.stringify(OnYouPalette));
+
+            //create div for color
+            var div = document.createElement("div");
+            div.style.backgroundColor = color;
+            div.style.width = "100px";
+            div.style.height = "100px";
+            document.body.appendChild(div);
+
+            }
+
+
+            function setActiveButton(activeButtonId) {
+                // Get all buttons
+                var buttons = document.querySelectorAll('.button-container button');
+
+                // Remove .active from all buttons
+                buttons.forEach(function(button) {
+                    button.classList.remove('active');
+                });
+
+                // Add .active to the clicked button
+                document.getElementById(activeButtonId).classList.add('active');
+            }
         }
 
-        //add color to palette
-        OnYouPalette.push(color);
 
-          // Update local storage with the new palette array
-        localStorage.setItem('OnYouPalette', JSON.stringify(OnYouPalette));
-
-        //create div for color
-        var div = document.createElement("div");
-        div.style.backgroundColor = color;
-        div.style.width = "100px";
-        div.style.height = "100px";
-        document.body.appendChild(div);
-
-        }
 
 
     </script>

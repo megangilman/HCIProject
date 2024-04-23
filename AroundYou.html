@@ -31,6 +31,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Palettes.html">Palettes</a></li>
+                <li><a href="OnYou.html">On You</a></li>
+                <li><a href="InBranding.html">In Branding</a></li>
             </ul>
         </nav>
         <!-- H1 means 1st level heading -->
@@ -41,9 +43,11 @@
    <!-- P stands for paragraph -->
    <p></p>
 
-    <!-- Display buttons -->
-    <button class="overview" onclick="showOverview();">Color Overview</button>
-    <button class="spaces" onclick="showSpaces();">Color in Spaces</button>
+    <div class="button-container">
+        <!-- Display buttons -->
+        <button id="overview-button" onclick="showOverview();">Color Overview</button>
+        <button id="spaces-button"class="spaces" onclick="showSpaces();">Color in Spaces</button>
+    </div>
 
 
     <container id="overview">
@@ -71,13 +75,15 @@
     
    
 
-   <footer>CS3041: Human-Computer Interaction </footer>
+   <!-- <footer>CS3041: Human-Computer Interaction </footer> -->
     </div>
 
     <script>
         function initBody() {
             document.getElementById("overview").style.display = "block";
             document.getElementById("spaces").style.display = "none";
+
+            showOverview();
         }
 
 
@@ -85,35 +91,58 @@
             document.getElementById("spaces").style.display = "block";
             document.getElementById("overview").style.display = "none";
 
+            setActiveButton("spaces-button");
+
         }
 
         function showOverview() {
             document.getElementById("overview").style.display = "block";
             document.getElementById("spaces").style.display = "none";
+
+            setActiveButton("overview-button");
         }
 
         function AddtoAroundYouPalette(color) {
 
-        if (AroundYouPalette == null){
-            AroundYouPalette = [];
-        } 
-        else {
-            AroundYouPalette = JSON.parse(localStorage.getItem("AroundYouPalette"));
-        }
+        var bool=confirm("Are you sure?");
 
-        //add color to palette
-        AroundYouPalette.push(color);
+        /*if the user clicked ok execute the following*/
+        if(bool==true){
 
-          // Update local storage with the new palette array
-        localStorage.setItem('AroundYouPalette', JSON.stringify(AroundYouPalette));
+            if (AroundYouPalette == null){
+                AroundYouPalette = [];
+            } 
+            else {
+                AroundYouPalette = JSON.parse(localStorage.getItem("AroundYouPalette"));
+            }
 
-        //create div for color
-        var div = document.createElement("div");
-        div.style.backgroundColor = color;
-        div.style.width = "100px";
-        div.style.height = "100px";
-        document.body.appendChild(div);
+            //add color to palette
+            AroundYouPalette.push(color);
 
+            // Update local storage with the new palette array
+            localStorage.setItem('AroundYouPalette', JSON.stringify(AroundYouPalette));
+
+            //create div for color
+            var div = document.createElement("div");
+            div.style.backgroundColor = color;
+            div.style.width = "100px";
+            div.style.height = "100px";
+            document.body.appendChild(div);
+
+            }
+
+            function setActiveButton(activeButtonId) {
+                // Get all buttons
+                var buttons = document.querySelectorAll('.button-container button');
+
+                // Remove .active from all buttons
+                buttons.forEach(function(button) {
+                    button.classList.remove('active');
+                });
+
+                // Add .active to the clicked button
+                document.getElementById(activeButtonId).classList.add('active');
+            }
         }
 
 

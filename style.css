@@ -1,3 +1,7 @@
+html { 
+    width: 100%;
+    height: 100%;
+}
 header {
     font-family: Futura, Trebuchet MS;
     font-weight: bold condensed;
@@ -8,7 +12,7 @@ header {
 body { 
     font-family: Arial, sans-serif;
     font-size: 16px;
-    color: rgb(224, 147, 221)
+    color: rgb(171, 31, 117)
     }
 
     
@@ -21,7 +25,7 @@ body {
     
 h1 {
     font-family : "Noto Sans JP", sans-serif;
-    font-size: 55px;
+    font-size: 4.5vw;
     color: #2b43ac;
     font-weight: bold;
     margin: 10px;
@@ -49,11 +53,14 @@ h1 {
 #main_nav li a {
     display: block;
     text-decoration: none; /* remove underline */
-    border-radius: 10px;  /* rounded corners */
-    margin: 6px;
-    padding: 9px;
+    border-radius: 2vw;
+    margin: .75vw;
+    padding: 1.5vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
     color: #222;
     font-weight: bold;
+    
     
     /* nice gradient shade on the buttons */
     background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
@@ -68,11 +75,14 @@ nav li:active {
     }
 
 footer { 
-    font-size: 12px;
+    font-size: 1vw;
     text-align: center;
     padding: 10px;
     background-color: #9fcfff;
     color: #1f222a;
+    height : 10vh;
+    
+    
     }
 
 
@@ -102,6 +112,7 @@ footer {
     margin: 6px;
     padding: 9px;
     font-weight: bold;
+    font-size: 1.5vw;
 }
     
 #OnYouPaletteDiv {
@@ -125,5 +136,62 @@ footer {
     justify-content: flex-start; 
 }
 
+.homepage {
+    /* column layout */
+    display: flex;
+    align-items: center;
+    height : 90vh;
+
+}
+
+.homepage-text{
+    align-items: center; 
+    width : 50vw;
 
 
+}
+
+.homenav {
+
+    width : 50vw;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size : 2vw;
+    margin-top: 4vw;
+}
+
+.section-container {
+    text-align: center;
+    padding: 4vw;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+.section-description {
+    font-size: 2vw;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    cursor: pointer; /* Changes the mouse cursor to a pointer on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+}
+
+.button-container button {
+    background-color: #ffffff; /* Light purple background, change as needed */
+    color: #000000; /* Darker purple text, change as needed */
+    border: 2px solid #21215d; /* Dark purple border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    margin: 10px; /* Space between buttons */
+}
+
+.button-container button.active, .button-container button:hover{
+    background-color: #21215d; /* Dark purple background when button is clicked */
+    color: #ffffff; /* White text when button is clicked */
+}
