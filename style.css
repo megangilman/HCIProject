@@ -7,13 +7,13 @@ header {
     font-weight: bold condensed;
     color: #AC2B37; 
     font-size: 25px;
-   }
+}
 
 body { 
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: rgb(171, 31, 117)
-    }
+}
 
     
 .noto-sans jp-h1{
@@ -30,7 +30,12 @@ h1 {
     font-weight: bold;
     margin: 10px;
     text-align: center;
-    }
+}
+
+p{ 
+    font-family : "Noto Sans JP", sans-serif;
+    font-size: 1.25vw;
+}
 
 #content {
     padding: 3px;
@@ -195,3 +200,67 @@ footer {
     background-color: #21215d; /* Dark purple background when button is clicked */
     color: #ffffff; /* White text when button is clicked */
 }
+
+#overview, #spaces, #perception, #season, #OnYou, #AroundYou, #marketing, #palette-container{
+    width: 75%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.palette-container {
+    width: 75%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#spaces .spaces {
+    width: 10vw;
+    height: 5vw;
+    border-radius: 1vw;
+    font-size: 1.25vw;
+}
+
+#perception .perception {
+    width: 10vw;
+    height: 5vw;
+    border-radius: 1vw;
+    font-size: 1.25vw;
+}
+
+#season .season {
+    width: 10vw;
+    height: 5vw;
+    border-radius: 1vw;
+    font-size: 1.25vw;
+}
+
+#OnYou .OnYou {
+    width: 10vw;
+    height: 5vw;
+    border-radius: 1vw;
+    font-size: 1.25vw;
+}
+
+#AroundYou .AroundYou {
+    width: 10vw;
+    height: 5vw;
+    border-radius: 1vw;
+    font-size: 1.25vw;
+}
+
+#marketing .marketing{
+    width: 10vw;
+    height: 5vw;
+    border-radius: 1vw;
+    font-size: 1.25vw;
+}
+
+#palette-container .palette {
+    width: 10vw;
+    height: 5vw;
+    border-radius: 1vw;
+    font-size: 1.25vw;
+}   
+
+
+

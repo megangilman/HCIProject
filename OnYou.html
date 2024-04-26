@@ -10,10 +10,349 @@
 
     
     <script>
+        // Initialize the OnYouPalette array
         var OnYouPalette = [];
-        var blue = "blue";
-        var red = "red";
-        var green = "green";
+        //Initialize the colors #FEFEFE, #C8D8EB, #F395C7, #00A3E1, #0096CA, #0087AE, #0086D6, #0077C8, #0057B8, #004B87, #003DA5, #2D389B, #87189D, #A51890, #AA0061, #C6007E, #E00885, #E3006D, #E40046, #CE0037, #C724B1, #963CBD, #009775, #00594C, #131413
+
+        // Initialize the colors for the clear winter colors 
+        var white = "#FEFEFE";
+        var lightBlue = "#C8D8EB";
+        var pink = "#F395C7";
+        var lightBlue2 = "#00A3E1";
+        var blue2 = "#0096CA";
+        var darkBlue = "#0087AE";
+        var blue3 = "#0086D6";
+        var blue4 = "#0077C8";
+        var blue5 = "#0057B8";
+        var blue6 = "#004B87";
+        var blue7 = "#003DA5";
+        var blue8 = "#2D389B";
+        var pink2 = "#87189D";
+        var pink3 = "#A51890";
+        var pink4 = "#AA0061";
+        var pink5 = "#C6007E";
+        var pink6 = "#E00885";
+        var pink7 = "#E3006D";
+        var pink8 = "#E40046";
+        var pink9 = "#CE0037";
+        var pink10 = "#C724B1";
+        var pink11 = "#963CBD";
+        var green = "#009775";
+        var green2 = "#00594C";
+        var green3 = "#131413";
+
+        
+        // Initialize the colors #FEFEFE, #99D6EA, #F8E59A, #F395C7, #59CBE8, #9BB8D3, #00A3E1, #808286, #009775, #00B0B9, #0082BA, #0086D6, #0072CE, #0057B8, #004B87, #484A51, #84329B, #963CBD, #C724B1, #DA1884, #E3006D, #CE0037, #AA0061, #890C58, #131413 Cool winter 
+
+        var white2 = "#FEFEFE";
+        var lightBlue3 = "#99D6EA";
+        var yellow = "#F8E59A";
+        var pink = "#F395C7";
+        var lightBlue4 = "#59CBE8";
+        var blue = "#9BB8D3";
+        var lightBlue5 = "#00A3E1";
+        var grey = "#808286";
+        var green = "#009775";
+        var blue2 = "#00B0B9";
+        var blue3 = "#0082BA";
+        var blue4 = "#0086D6";
+        var blue5 = "#0072CE";
+        var blue6 = "#0057B8";
+        var blue7 = "#004B87";
+        var grey2 = "#484A51";
+        var pink2 = "#84329B";
+        var pink3 = "#963CBD";
+        var pink4 = "#C724B1";
+        var pink5 = "#DA1884";
+        var pink6 = "#E3006D";
+        var pink7 = "#CE0037";
+        var pink8 = "#AA0061";
+        var pink9 = "#890C58";
+        var green2 = "#131413";
+
+        //Initialize the colors for deep winter #FEFEFE, #B8C9E1, #0096CA, #0086D6, #007FA3, #00617F, #0057B8, #004B87, #84329B, #963CBD, #C724B1, #DA1884, #E3006D, #CE0037, #AA0061, #991E68, #890C58, #5C068C, #009775, #009F4D, #00594C, #002D72, #001E62, #131413, #341902
+
+        var white3 = "#FEFEFE";
+        var lightBlue = "#B8C9E1";
+        var blue = "#0096CA";
+        var blue2 = "#0086D6";
+        var blue3 = "#007FA3";
+        var blue4 = "#00617F";
+        var blue5 = "#0057B8";
+        var blue6 = "#004B87";
+        var pink = "#84329B";
+        var pink2 = "#963CBD";
+        var pink3 = "#C724B1";
+        var pink4 = "#DA1884";
+        var pink5 = "#E3006D";
+        var pink6 = "#CE0037";
+        var pink7 = "#AA0061";
+        var pink8 = "#991E68";
+        var pink9 = "#890C58";
+        var pink10 = "#5C068C";
+        var green = "#009775";
+        var green2 = "#009F4D";
+        var green3 = "#00594C";
+        var green4 = "#002D72";
+        var green5 = "#001E62";
+        var green6 = "#131413";
+        var green7 = "#341902";
+
+        //Initialize the colors for soft summer #F1BDC8, #FFA3B5, #9BCBEB, #6DCDB8, #9CAF88, #A39382, #C4A4A7, #D592AA, #F65275, #808286, #A277A6, #A05EB5, #A15A95, #86647A, #7C6992, #57728B, #5C82A5, #779FB5, #9BB8D3, #71C5E8, #A7A2C3, #9595D2, #009CA6, #484A51, #A83D72
+
+        var pink = "#F1BDC8";
+        var pink2 = "#FFA3B5";
+        var lightBlue = "#9BCBEB";
+        var green = "#6DCDB8";
+        var green2 = "#9CAF88";
+        var grey = "#A39382";
+        var pink3 = "#C4A4A7";
+        var pink4 = "#D592AA";
+        var pink5 = "#F65275";
+        var grey2 = "#808286";
+        var pink6 = "#A277A6";
+        var pink7 = "#A05EB5";
+        var pink8 = "#A15A95";
+        var grey3 = "#86647A";
+        var grey4 = "#7C6992";
+        var blue = "#57728B";
+        var blue2 = "#5C82A5";
+        var blue3 = "#779FB5";
+        var blue4 = "#9BB8D3";
+        var blue5 = "#71C5E8";
+        var pink9 = "#A7A2C3";
+        var pink10 = "#9595D2";
+        var blue6 = "#009CA6";
+        var grey5 = "#484A51";
+        var pink11 = "#A83D72";
+        
+        //Initialize cool summer colors #F395C7, #BCBDBE, #C4A4A7, #F57EB6, #E277CD, #C964CF, #A277A6, #808286, #00A376, #00B0B9, #00A9E0, #71C5E8, #57728B, #0077C8, #7965B2, #963CBD, #93328E, #AC145A, #BF0D3E, #E31C79, #EF60A3, #007681, #006F62, #484A51, #003057
+
+        var pink = "#F395C7";
+        var grey = "#BCBDBE";
+        var pink2 = "#C4A4A7";
+        var pink3 = "#F57EB6";
+        var pink4 = "#E277CD";
+        var pink5 = "#C964CF";
+        var pink6 = "#A277A6";
+        var grey2 = "#808286";
+        var blue = "#00A376";
+        var blue2 = "#00B0B9";
+        var blue3 = "#00A9E0";
+        var blue4 = "#71C5E8";
+        var blue5 = "#57728B";
+        var blue6 = "#0077C8";
+        var blue7 = "#7965B2";
+        var pink7 = "#963CBD";
+        var pink8 = "#93328E";
+        var pink9 = "#AC145A";
+        var pink10 = "#BF0D3E";
+        var pink11 = "#E31C79";
+        var pink12 = "#EF60A3";
+        var blue8 = "#007681";
+        var blue9 = "#006F62";
+        var grey3 = "#484A51";
+        var blue10 = "#003057";
+
+        //Initialize the colors for light summer 
+        var pink = "#F395C7";
+        var grey = "#BCBDBE";
+        var pink2 = "#C4A4A7";
+        var pink3 = "#F57EB6";
+        var pink4 = "#E277CD";
+        var pink5 = "#C964CF";
+        var pink6 = "#A277A6";
+        var grey2 = "#808286";
+        var blue = "#00A376";
+        var blue2 = "#00B0B9";
+        var blue3 = "#00A9E0";
+        var blue4 = "#71C5E8";
+        var blue5 = "#57728B";
+        var blue6 = "#0077C8";
+        var blue7 = "#7965B2";
+        var pink7 = "#963CBD";
+        var pink8 = "#93328E";
+        var pink9 = "#AC145A";
+        var pink10 = "#BF0D3E";
+        var pink11 = "#E31C79";
+        var pink12 = "#EF60A3";
+        var blue8 = "#007681";
+        var blue9 = "#006F62";
+        var grey3 = "#484A51";
+        var blue10 = "#003057";
+
+        //Initialize the colors for clear spring #FFF9D7, #FCE300, #FDD26E, #FFCD00, #FFB81C, #FDAA63, #FF8200, #FF8D6D, #DA291C, #E40046, #D539B5, #A77BCA, #963CBD, #84329B, #00558C, #007FA3, #0087AE, #008EAA, #00A499, #77C5D5, #D0DF00, #A6631B, #BE5400, #5C462B, #453536
+
+        var white = "#FFF9D7";
+        var yellow = "#FCE300";
+        var yellow2 = "#FDD26E";
+        var yellow3 = "#FFCD00";
+        var yellow4 = "#FFB81C";
+        var yellow5 = "#FDAA63";
+        var yellow6 = "#FF8200";
+        var yellow7 = "#FF8D6D";
+        var pink = "#DA291C";
+        var pink2 = "#E40046";
+        var pink3 = "#D539B5";
+        var pink4 = "#A77BCA";
+        var pink5 = "#963CBD";
+        var pink6 = "#84329B";
+        var blue = "#00558C";
+        var blue2 = "#007FA3";
+        var blue3 = "#0087AE";
+        var blue4 = "#008EAA";
+        var blue5 = "#00A499";
+        var blue6 = "#77C5D5";
+        var yellow8 = "#D0DF00";
+        var pink7 = "#A6631B";
+        var pink8 = "#BE5400";
+        var grey = "#5C462B";
+        var grey2 = "#453536";
+
+        //Initialize the colors for warm spring #FCE300, #FDD26E, #FFCD00, #FFB81C, #F0B323, #D4C304, #C4D600, #A9C23F, #A8AD00, #74AA50, #6CC24A, #009F4D, #00A499, #2DCCD3, #6DCDB8, #9595D2, #963CBD, #DA291C, #B46A55, #EC5037, #A6631B, #FF8200, #FF8F1C, #FDAA63, #FFA38B
+
+        var yellow = "#FCE300";
+        var yellow2 = "#FDD26E";
+        var yellow3 = "#FFCD00";
+        var yellow4 = "#FFB81C";
+        var yellow5 = "#F0B323";
+        var yellow6 = "#D4C304";
+        var yellow7 = "#C4D600";
+        var yellow8 = "#A9C23F";
+        var yellow9 = "#A8AD00";
+        var yellow10 = "#74AA50";
+        var yellow11 = "#6CC24A";
+        var blue = "#009F4D";
+        var blue2 = "#00A499";
+        var blue3 = "#2DCCD3";
+        var green = "#6DCDB8";
+        var pink = "#9595D2";
+        var pink2 = "#963CBD";
+        var pink3 = "#DA291C";
+        var pink4 = "#B46A55";
+        var pink5 = "#EC5037";
+        var pink6 = "#A6631B";
+        var yellow12 = "#FF8200";
+        var yellow13 = "#FF8F1C";
+        var yellow14 = "#FDAA63";
+        var yellow15 = "#FFA38B";
+
+        //Initialize the colors for light spring #FFF9D7, #F1EB9C, #F5E1A4, #F8CFA9, #FCC89B, #D9EA9A, #D0DEBB, #A5DFD3, #A4DBE8, #9BCBEB, #C5B4E3, #D7A9E3, #FBDB65, #CAC7A7, #D3BC8D, #D9B48F, #FDAA63, #CDA077, #C0A392, #FF8D6D, #FAAA8D, #9595D2, #2DCCD3, #6DCDB8, #6CC24A
+
+        var white = "#FFF9D7";
+        var yellow = "#F1EB9C";
+        var yellow2 = "#F5E1A4";
+        var yellow3 = "#F8CFA9";
+        var yellow4 = "#FCC89B";
+        var yellow5 = "#D9EA9A";
+        var yellow6 = "#D0DEBB";
+        var yellow7 = "#A5DFD3";
+        var yellow8 = "#A4DBE8";
+        var lightBlue = "#9BCBEB";
+        var pink = "#C5B4E3";
+        var pink2 = "#D7A9E3";
+        var yellow9 = "#FBDB65";
+        var grey = "#CAC7A7";
+        var grey2 = "#D3BC8D";
+        var grey3 = "#D9B48F";
+        var pink3 = "#FDAA63";
+        var pink4 = "#CDA077";
+        var pink5 = "#C0A392";
+        var pink6 = "#FF8D6D";
+        var pink7 = "#FAAA8D";
+        var pink8 = "#9595D2";
+        var blue = "#2DCCD3";
+        var green = "#6DCDB8";
+        var green2 = "#6CC24A";
+
+        //Initialize the colors for soft Autumn #F5E1A4, #FCD299, #DFD1A7, #BBC592, #A3AA83, #A09958, #899064, #94795D, #B58150, #DB864E, #AE8A79, #C26E60, #956C58, #946037, #C05131, #7C4D3A, #52463F, #487A7B, #507F70, #009F4D, #6BCABA, #CDA788, #D9B48F, #FDAA63, #CBA052
+
+        var yellow = "#F5E1A4";
+        var yellow2 = "#FCD299";
+        var yellow3 = "#DFD1A7";
+        var yellow4 = "#BBC592";
+        var yellow5 = "#A3AA83";
+        var yellow6 = "#A09958";
+        var grey = "#899064";
+        var grey2 = "#94795D";
+        var grey3 = "#B58150";
+        var grey4 = "#DB864E";
+        var grey5 = "#AE8A79";
+        var grey6 = "#C26E60";
+        var grey7 = "#956C58";
+        var grey8 = "#946037";
+        var pink = "#C05131";
+        var grey9 = "#7C4D3A";
+        var grey10 = "#52463F";
+        var grey11 = "#487A7B";
+        var grey12 = "#507F70";
+        var blue = "#009F4D";
+        var blue2 = "#6BCABA";
+        var pink2 = "#CDA788";
+        var pink3 = "#D9B48F";
+        var pink4 = "#FDAA63";
+        var pink5 = "#CBA052";
+
+        //Initialize the colors for warm autumn #FFCD00, #B4A91F, #B89D18, #A09958, #8F993E, #5E7E29, #7A7256, #A07400, #A6631B, #946037, #9D4815, #7C4D3A, #9A3324, #5C462B, #C4622D, #EC5037, #EF7200, #F68D2E, #D69A2D, #6BCABA, #00BFB3, #009F4D, #00778B, #046A38, #205C40
+
+        var yellow = "#FFCD00";
+        var grey = "#B4A91F";
+        var grey2 = "#B89D18";
+        var yellow2 = "#A09958";
+        var yellow3 = "#8F993E";
+        var yellow4 = "#5E7E29";
+        var grey3 = "#7A7256";
+        var yellow5 = "#A07400";
+        var pink = "#A6631B";
+        var grey4 = "#946037";
+        var grey5 = "#9D4815";
+        var grey6 = "#7C4D3A";
+        var grey7 = "#9A3324";
+        var grey8 = "#5C462B";
+        var pink2 = "#C4622D";
+        var pink3 = "#EC5037";
+        var pink4 = "#EF7200";
+        var pink5 = "#F68D2E";
+        var pink6 = "#D69A2D";
+        var blue = "#6BCABA";
+        var blue2 = "#00BFB3";
+        var blue3 = "#009F4D";
+        var blue4 = "#00778B";
+        var blue5 = "#046A38";
+        var blue6 = "#205C40";
+
+        //Initialize Deep Autumn Colors #C4D600, #DAAA00, #FF8200, #C4622D, #BE4D00, #EC5037, #7C4D3A, #9A3324, #63513D, #5C462B, #5D6439, #67823A, #009F4D, #00A3AD, #0087AE, #007FA3, #007680, #005A70, #963CBD, #890C58, #643335, #7C2529, #5C068C, #A07400, #00594C
+
+        var yellow = "#C4D600";
+        var yellow2 = "#DAAA00";
+        var pink = "#FF8200";
+        var pink2 = "#C4622D";
+        var pink3 = "#BE4D00";
+        var pink4 = "#EC5037";
+        var grey = "#7C4D3A";
+        var grey2 = "#9A3324";
+        var grey3 = "#63513D";
+        var grey4 = "#5C462B";
+        var grey5 = "#5D6439";
+        var grey6 = "#67823A";
+        var blue = "#009F4D";
+        var blue2 = "#00A3AD";
+        var blue3 = "#0087AE";
+        var blue4 = "#007FA3";
+        var blue5 = "#007680";
+        var blue6 = "#005A70";
+        var pink5 = "#963CBD";
+        var pink6 = "#890C58";
+        var grey7 = "#643335";
+        var grey8 = "#7C2529";
+        var pink7 = "#5C068C";
+        var yellow3 = "#A07400";
+        var green = "#00594C";
+
+        // Initialize the colors
+
+
+       
     </script>
 
 </head>
@@ -56,29 +395,638 @@
 
     <container id="overview">
         <h2>Color Overview</h2>
-        <p>Color is a visual perceptual property derived from the spectrum of light interacting in the eye with the spectral sensitivities of the light receptors. Color categories and physical specifications of color are associated with objects through the wavelength of the light that is reflected, transmitted, or emitted. This reflection is governed by the object's physical properties such as light absorption, emission spectra, etc.</p>
+        <p>Color theory has been studied in depth for years as the field that analyzes how colors work together to affect a viewer's emotional response and perceptions. Color is leveraged everyday in projects, homes, businesses, clothes, toys, and much more. Color is all around YOU and ON YOU! Color on you can affect the way that you are perceived along with the way your individual beauty shows through. 
+        </p>
+
+        <p>Identifying your color season is done through the process of analyzing the undertone of your features and how they align against each other. To complete your own color analysis you can visit <a>href="https://colorwise.me/self-analysis" >Colorwise.me</a> o complete an online assessment.
+        There are four main color seasons and three subseasons for each, which further narrows down your cues. To explore more visit the Color Season page. </p>
+
+        <p> Using color in rooms can impact the experience of a person in that space. A lot of research has been done in this realm to uncover the phycological effects the colors present in a room has on someone. Research has uncovered trends in varying colors affecting both the physical and emotional state of someone. Furthermore reserarch has identified which colors are best implemented in different types of spaces. To learn more explore the Color in Spaces page. 
+        </p>
+
     </container>
 
     <container id="perception">
         <h2>Color Perception</h2>
-        <p>Color perception is the ability of the brain to interpret the visible spectrum of light. The human eye can differentiate between 10 million colors. The perception of color is influenced by the surrounding environment, the light source, and the individual's age
+        <p>Using color in rooms can impact the experience of a person in that space. A lot of research has been done in this realm to uncover the phycological effects the colors present in a room has on someone. Research has uncovered trends in varying colors affecting both the physical and emotional state of someone. Furthermore reserarch has identified which colors are best implemented in different types of spaces. To learn more explore the Color in Spaces page. 
+
         </p>
 
-        <h3>Green </h3>
-        <button class = "perception" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        <h3> Red </h3>
+        <p>Red is a color that is associated with energy, war, danger, strength, power, determination as well as passion, desire, and love. 
+        </p>
+
+        <button class = "perception" style = "background-color: #FF0000" onclick="AddtoOnYouPalette(red);">Add Color</button>
+
+        <h3> White </h3>
+        <p>Symbolizes purity, cleansing and a new beginning.Color of balance and purity. 
+        </p>
+
+        <button class = "perception" style = "background-color: #FFFFFF" onclick="AddtoOnYouPalette(white);">Add Color</button>
+
+        <h3>Pink</h3>
+        <p>Tied in with femininity, feeling of love and romance. Men who wear pink exude confidence in their masculinity and femininity. </p>
+
+        <button class = "perception" style = "background-color: #FFC0CB" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+
+        <h3>Grey</h3>
+        <p>Wearing gray can push elegance, simplicity and stability. 
+            Can give people a sense of realism. 
+            However it can also symbolize loneliness and indifference. 
+        </p>
+
+        <button class = "perception" style = "background-color: #808080" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+
+        <h3>Orange</h3>
+        <p>Signals new possibilities, creativity, warmth, ambition, good times, and positivity. 
+        </p>
+
+        <button class = "perception" style = "background-color: #FFA500" onclick="AddtoOnYouPalette(orange);">Add Color</button>
+
+        <h3>Golden</h3>
+        <p>Associated with royalty and wealth. 
+        </p>
+
+        <button class = "perception" style = "background-color: #FFD700" onclick="AddtoOnYouPalette(golden);">Add Color</button>
+
+        <h3>Green</h3>
+        <p> Triggers a calming and healing reaction. Is associated with generosity.
+        </p>
+
+        <button class = "perception" style = "background-color: #008000" onclick="AddtoOnYouPalette(green);">Add Color</button>
+
+        <h3> Blue </h3>
+        <p>Blue is a soothing and calm color. 
+            Is associated with a calming, soothing loyal feeling. 
+        </p>
+
+        <button class = "perception" style = "background-color: #0000FF" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+
+        <h3> Black </h3>
+        <p>Signals a feeling of depth and mystery along with darkness. 
+        </p>
+
+        <button class = "perception" style = "background-color: #000000" onclick="AddtoOnYouPalette(black);">Add Color</button>  
+
 
     </container>
 
     <container id="season">
         <h2>Color Season</h2>
-        <p>Color theory is a practical guidance to color mixing and the visual effects of a specific color combination. It is used to create aesthetically pleasing color schemes. The traditional color wheel is a visual representation of color theory. It is divided into three categories: primary colors, secondary colors, and tertiary colors. The color wheel is used to create color schemes that are visually appealing.</p>
+        <p>Identifying your color season is done through the process of analyzing the undertone of your features and how they align against each other. To complete your own color analysis you can visit <a>href="https://colorwise.me/self-analysis" >Colorwise.me</a> o complete an online assessment.
+        There are four main color seasons and three subseasons for each, which further narrows down your cues. </p>
 
-        <h3>Blue</h3>
 
-        <button class = "season" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        
 
-        <h3>Red</h3>
-        <button class = "season" onclick="AddtoOnYouPalette(red);">Add Color</button>
+        <h3 style="font-weight: bold">Winter</h3>
+
+        <h3>Clear Winter</h3>
+        <!-- var white = "#FEFEFE";
+        var lightBlue = "#C8D8EB";
+        var pink = "#F395C7";
+        var lightBlue2 = "#00A3E1";
+        var blue2 = "#0096CA";
+        var darkBlue = "#0087AE";
+        var blue3 = "#0086D6";
+        var blue4 = "#0077C8";
+        var blue5 = "#0057B8";
+        var blue6 = "#004B87";
+        var blue7 = "#003DA5";
+        var blue8 = "#2D389B";
+        var pink2 = "#87189D";
+        var pink3 = "#A51890";
+        var pink4 = "#AA0061";
+        var pink5 = "#C6007E";
+        var pink6 = "#E00885";
+        var pink7 = "#E3006D";
+        var pink8 = "#E40046";
+        var pink9 = "#CE0037";
+        var pink10 = "#C724B1";
+        var pink11 = "#963CBD";
+        var green = "#009775";
+        var green2 = "#00594C";
+        var green3 = "#131413";-->
+        <button class = "season" style = "background-color: #FEFEFE" onclick="AddtoOnYouPalette(white);">Add Color</button>
+        <button class = "season" style = "background-color: #C8D8EB" onclick="AddtoOnYouPalette(lightBlue);">Add Color</button>
+        <button class = "season" style = "background-color: #F395C7" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #00A3E1" onclick="AddtoOnYouPalette(lightBlue2);">Add Color</button>
+        <button class = "season" style = "background-color: #0096CA" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #0087AE" onclick="AddtoOnYouPalette(darkBlue);">Add Color</button>
+        <button class = "season" style = "background-color: #0086D6" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #0077C8" onclick="AddtoOnYouPalette(blue4);">Add Color</button>
+        <button class = "season" style = "background-color: #0057B8" onclick="AddtoOnYouPalette(blue5);">Add Color</button>
+        <button class = "season" style = "background-color: #004B87" onclick="AddtoOnYouPalette(blue6);">Add Color</button>
+        <button class = "season" style = "background-color: #003DA5" onclick="AddtoOnYouPalette(blue7);">Add Color</button>
+        <button class = "season" style = "background-color: #2D389B" onclick="AddtoOnYouPalette(blue8);">Add Color</button>
+        <button class = "season" style = "background-color: #87189D" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #A51890" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #AA0061" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #C6007E" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #E00885" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #E3006D" onclick="AddtoOnYouPalette(pink7);">Add Color</button>
+        <button class = "season" style = "background-color: #E40046" onclick="AddtoOnYouPalette(pink8);">Add Color</button>
+        <button class = "season" style = "background-color: #CE0037" onclick="AddtoOnYouPalette(pink9);">Add Color</button>
+        <button class = "season" style = "background-color: #C724B1" onclick="AddtoOnYouPalette(pink10);">Add Color</button>
+        <button class = "season" style = "background-color: #963CBD" onclick="AddtoOnYouPalette(pink11);">Add Color</button>
+        <button class = "season" style = "background-color: #009775" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        <button class = "season" style = "background-color: #00594C" onclick="AddtoOnYouPalette(green2);">Add Color</button>
+        <button class = "season" style = "background-color: #131413" onclick="AddtoOnYouPalette(green3);">Add Color</button>
+
+            
+        <h3>Cool Winter</h3>
+        <button class = "season" style = "background-color: #FEFEFE" onclick="AddtoOnYouPalette(white2);">Add Color</button>
+        <button class = "season" style = "background-color: #99D6EA" onclick="AddtoOnYouPalette(lightBlue3);">Add Color</button>
+        <button class = "season" style = "background-color: #F8E59A" onclick="AddtoOnYouPalette(yellow);">Add Color</button>
+        <button class = "season" style = "background-color: #F395C7" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #59CBE8" onclick="AddtoOnYouPalette(lightBlue4);">Add Color</button>
+        <button class = "season" style = "background-color: #9BB8D3" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #00A3E1" onclick="AddtoOnYouPalette(lightBlue5);">Add Color</button>
+        <button class = "season" style = "background-color: #808286" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+        <button class = "season" style = "background-color: #009775" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        <button class = "season" style = "background-color: #00B0B9" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #0082BA" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #0086D6" onclick="AddtoOnYouPalette(blue4);">Add Color</button>
+        <button class = "season" style = "background-color: #0072CE" onclick="AddtoOnYouPalette(blue5);">Add Color</button>
+        <button class = "season" style = "background-color: #0057B8" onclick="AddtoOnYouPalette(blue6);">Add Color</button>
+        <button class = "season" style = "background-color: #004B87" onclick="AddtoOnYouPalette(blue7);">Add Color</button>
+        <button class = "season" style = "background-color: #484A51" onclick="AddtoOnYouPalette(grey2);">Add Color</button>
+        <button class = "season" style = "background-color: #84329B" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #963CBD" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #C724B1" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #DA1884" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #E3006D" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #CE0037" onclick="AddtoOnYouPalette(pink7);">Add Color</button>
+        <button class = "season" style = "background-color: #AA0061" onclick="AddtoOnYouPalette(pink8);">Add Color</button>
+        <button class = "season" style = "background-color: #890C58" onclick="AddtoOnYouPalette(pink9);">Add Color</button>
+        <button class = "season" style = "background-color: #131413" onclick="AddtoOnYouPalette(green2);">Add Color</button>
+        <button class = "season" style = "background-color: #341902" onclick="AddtoOnYouPalette(green3);">Add Color</button>
+
+            
+        <h3>Deep Winter</h3>
+        <button class = "season" style = "background-color: #FEFEFE" onclick="AddtoOnYouPalette(white3);">Add Color</button>
+        <button class = "season" style = "background-color: #B8C9E1" onclick="AddtoOnYouPalette(lightBlue);">Add Color</button>
+        <button class = "season" style = "background-color: #0096CA" onclick="AddtoOnYouPalette(blue);">Add Color</button>  
+        <button class = "season" style = "background-color: #0086D6" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #007FA3" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #00617F" onclick="AddtoOnYouPalette(blue4);">Add Color</button>
+        <button class = "season" style = "background-color: #0057B8" onclick="AddtoOnYouPalette(blue5);">Add Color</button>
+        <button class = "season" style = "background-color: #004B87" onclick="AddtoOnYouPalette(blue6);">Add Color</button>
+        <button class = "season" style = "background-color: #84329B" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #963CBD" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #C724B1" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #DA1884" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #E3006D" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #CE0037" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #AA0061" onclick="AddtoOnYouPalette(pink7);">Add Color</button>
+        <button class = "season" style = "background-color: #890C58" onclick="AddtoOnYouPalette(pink8);">Add Color</button>
+        <button class = "season" style = "background-color: #5C068C" onclick="AddtoOnYouPalette(pink9);">Add Color</button>
+        <button class = "season" style = "background-color: #009775" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        <button class = "season" style = "background-color: #00617F" onclick="AddtoOnYouPalette(blue7);">Add Color</button>
+        <button class = "season" style = "background-color: #0057B8" onclick="AddtoOnYouPalette(blue8);">Add Color</button>
+        <button class = "season" style = "background-color: #004B87" onclick="AddtoOnYouPalette(blue9);">Add Color</button>
+        <button class = "season" style = "background-color: #484A51" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+        <button class = "season" style = "background-color: #A83D72" onclick="AddtoOnYouPalette(pink10);">Add Color</button>
+        <button class = "season" style = "background-color: #A05EB5" onclick="AddtoOnYouPalette(pink11);">Add Color</button>
+        <button class = "season" style = "background-color: #A15A95" onclick="AddtoOnYouPalette(pink12);">Add Color</button>
+        <button class = "season" style = "background-color: #7C6992" onclick="AddtoOnYouPalette(grey2);">Add Color</button>
+        <button class = "season" style = "background-color: #5C462B" onclick="AddtoOnYouPalette(grey3);">Add Color</button>
+
+
+
+            
+        <h3 style="font-weight: bold">Summer</h3>
+            
+        <h3>Soft Summer</h3>
+        <button class = "season" style = "background-color: #F1BDC8" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #FFA3B5" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #9BCBEB" onclick="AddtoOnYouPalette(lightBlue);">Add Color</button>
+        <button class = "season" style = "background-color: #6DCDB8" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        <button class = "season" style = "background-color: #9CAF88" onclick="AddtoOnYouPalette(green2);">Add Color</button>
+        <button class = "season" style = "background-color: #A39382" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+        <button class = "season" style = "background-color: #C4A4A7" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #D592AA" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #F65275" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #808286" onclick="AddtoOnYouPalette(grey2);">Add Color</button>
+        <button class = "season" style = "background-color: #A277A6" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #A05EB5" onclick="AddtoOnYouPalette(pink7);">Add Color</button>
+        <button class = "season" style = "background-color: #A15A95" onclick="AddtoOnYouPalette(pink8);">Add Color</button>
+        <button class = "season" style = "background-color: #86647A" onclick="AddtoOnYouPalette(grey3);">Add Color</button>
+        <button class = "season" style = "background-color: #7C6992" onclick="AddtoOnYouPalette(grey4);">Add Color</button>
+        <button class = "season" style = "background-color: #57728B" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #5C82A5" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #779FB5" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #9BB8D3" onclick="AddtoOnYouPalette(blue4);">Add Color</button>
+        <button class = "season" style = "background-color: #71C5E8" onclick="AddtoOnYouPalette(blue5);">Add Color</button>
+        <button class = "season" style = "background-color: #00A3E1" onclick="AddtoOnYouPalette(lightBlue2);">Add Color</button>
+        <button class = "season" style = "background-color: #00B0B9" onclick="AddtoOnYouPalette(blue6);">Add Color</button>
+        <button class = "season" style = "background-color: #00A9E0" onclick="AddtoOnYouPalette(blue7);">Add Color</button>
+        <button class = "season" style = "background-color: #0077C8" onclick="AddtoOnYouPalette(blue8);">Add Color</button>
+        <button class = "season" style = "background-color: #006F62" onclick="AddtoOnYouPalette(blue9);">Add Color</button>
+            
+        <h3>Cool Summer</h3>
+        <!-- var pink = "#F1BDC8";
+        var pink2 = "#FFA3B5";
+        var lightBlue = "#9BCBEB";
+        var green = "#6DCDB8";
+        var green2 = "#9CAF88";
+        var grey = "#A39382";
+        var pink3 = "#C4A4A7";
+        var pink4 = "#D592AA";
+        var pink5 = "#F65275";
+        var grey2 = "#808286";
+        var pink6 = "#A277A6";
+        var pink7 = "#A05EB5";
+        var pink8 = "#A15A95";
+        var grey3 = "#86647A";
+        var grey4 = "#7C6992";
+        var blue = "#57728B";
+        var blue2 = "#5C82A5";
+        var blue3 = "#779FB5";
+        var blue4 = "#9BB8D3";
+        var blue5 = "#71C5E8";
+        var pink9 = "#A7A2C3";
+        var pink10 = "#9595D2";
+        var blue6 = "#009CA6";
+        var grey5 = "#484A51";
+        var pink11 = "#A83D72";-->
+        <button class = "season" style = "background-color: #F1BDC8" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #FFA3B5" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #9BCBEB" onclick="AddtoOnYouPalette(lightBlue);">Add Color</button>
+        <button class = "season" style = "background-color: #6DCDB8" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        <button class = "season" style = "background-color: #9CAF88" onclick="AddtoOnYouPalette(green2);">Add Color</button>
+        <button class = "season" style = "background-color: #A39382" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+        <button class = "season" style = "background-color: #C4A4A7" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #D592AA" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #F65275" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #808286" onclick="AddtoOnYouPalette(grey2);">Add Color</button>
+        <button class = "season" style = "background-color: #A277A6" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #A05EB5" onclick="AddtoOnYouPalette(pink7);">Add Color</button>
+        <button class = "season" style = "background-color: #A15A95" onclick="AddtoOnYouPalette(pink8);">Add Color</button>
+        <button class = "season" style = "background-color: #86647A" onclick="AddtoOnYouPalette(grey3);">Add Color</button>
+        <button class = "season" style = "background-color: #7C6992" onclick="AddtoOnYouPalette(grey4);">Add Color</button>
+        <button class = "season" style = "background-color: #57728B" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #5C82A5" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #779FB5" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #9BB8D3" onclick="AddtoOnYouPalette(blue4);">Add Color</button>
+        <button class = "season" style = "background-color: #71C5E8" onclick="AddtoOnYouPalette(blue5);">Add Color</button>
+        <button class = "season" style = "background-color: #A7A2C3" onclick="AddtoOnYouPalette(pink9);">Add Color</button>
+        <button class = "season" style = "background-color: #9595D2" onclick="AddtoOnYouPalette(pink10);">Add Color</button>
+        <button class = "season" style = "background-color: #009CA6" onclick="AddtoOnYouPalette(blue6);">Add Color</button>
+        <button class = "season" style = "background-color: #484A51" onclick="AddtoOnYouPalette(grey5);">Add Color</button>
+        <button class = "season" style = "background-color: #A83D72" onclick="AddtoOnYouPalette(pink11);">Add Color</button>
+
+        
+        <h3>Light Summer</h3>
+        <!-- var pink = "#F395C7";
+        var grey = "#BCBDBE";
+        var pink2 = "#C4A4A7";
+        var pink3 = "#F57EB6";
+        var pink4 = "#E277CD";
+        var pink5 = "#C964CF";
+        var pink6 = "#A277A6";
+        var grey2 = "#808286";
+        var blue = "#00A376";
+        var blue2 = "#00B0B9";
+        var blue3 = "#00A9E0";
+        var blue4 = "#71C5E8";
+        var blue5 = "#57728B";
+        var blue6 = "#0077C8";
+        var blue7 = "#7965B2";
+        var pink7 = "#963CBD";
+        var pink8 = "#93328E";
+        var pink9 = "#AC145A";
+        var pink10 = "#BF0D3E";
+        var pink11 = "#E31C79";
+        var pink12 = "#EF60A3";
+        var blue8 = "#007681";
+        var blue9 = "#006F62";
+        var grey3 = "#484A51";
+        var blue10 = "#003057";-->
+        <button class = "season" style = "background-color: #F395C7" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #BCBDBE" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+        <button class = "season" style = "background-color: #C4A4A7" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #F57EB6" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #E277CD" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #C964CF" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #A277A6" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #808286" onclick="AddtoOnYouPalette(grey2);">Add Color</button>
+        <button class = "season" style = "background-color: #00A376" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        <button class = "season" style = "background-color: #00B0B9" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #00A9E0" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #71C5E8" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #57728B" onclick="AddtoOnYouPalette(blue4);">Add Color</button>
+        <button class = "season" style = "background-color: #0077C8" onclick="AddtoOnYouPalette(blue5);">Add Color</button>
+        <button class = "season" style = "background-color: #7965B2" onclick="AddtoOnYouPalette(blue6);">Add Color</button>
+        <button class = "season" style = "background-color: #963CBD" onclick="AddtoOnYouPalette(pink7);">Add Color</button>
+        <button class = "season" style = "background-color: #93328E" onclick="AddtoOnYouPalette(pink8);">Add Color</button>
+        <button class = "season" style = "background-color: #AC145A" onclick="AddtoOnYouPalette(pink9);">Add Color</button>
+        <button class = "season" style = "background-color: #BF0D3E" onclick="AddtoOnYouPalette(pink10);">Add Color</button>
+        <button class = "season" style = "background-color: #E31C79" onclick="AddtoOnYouPalette(pink11);">Add Color</button>
+        <button class = "season" style = "background-color: #EF60A3" onclick="AddtoOnYouPalette(pink12);">Add Color</button>
+        <button class = "season" style = "background-color: #007681" onclick="AddtoOnYouPalette(blue7);">Add Color</button>
+        <button class = "season" style = "background-color: #006F62" onclick="AddtoOnYouPalette(blue8);">Add Color</button>
+        <button class = "season" style = "background-color: #484A51" onclick="AddtoOnYouPalette(grey3);">Add Color</button>
+        <button class = "season" style = "background-color: #003057" onclick="AddtoOnYouPalette(blue9);">Add Color</button>
+
+            
+        <h3 style = "font-weight: bold">Spring</h3> 
+        
+        <h3>Clear Spring</h3>
+        <!-- var white = "#FFF9D7";
+        var yellow = "#FCE300";
+        var yellow2 = "#FDD26E";
+        var yellow3 = "#FFCD00";
+        var yellow4 = "#FFB81C";
+        var yellow5 = "#FDAA63";
+        var yellow6 = "#FF8200";
+        var yellow7 = "#FF8D6D";
+        var pink = "#DA291C";
+        var pink2 = "#E40046";
+        var pink3 = "#D539B5";
+        var pink4 = "#A77BCA";
+        var pink5 = "#963CBD";
+        var pink6 = "#84329B";
+        var blue = "#00558C";
+        var blue2 = "#007FA3";
+        var blue3 = "#0087AE";
+        var blue4 = "#008EAA";
+        var blue5 = "#00A499";
+        var blue6 = "#77C5D5";
+        var yellow8 = "#D0DF00";
+        var pink7 = "#A6631B";
+        var pink8 = "#BE5400";
+        var grey = "#5C462B";
+        var grey2 = "#453536";-->
+        <button class = "season" style = "background-color: #FFF9D7" onclick="AddtoOnYouPalette(white);">Add Color</button>
+        <button class = "season" style = "background-color: #FCE300" onclick="AddtoOnYouPalette(yellow);">Add Color</button>
+        <button class = "season" style = "background-color: #FDD26E" onclick="AddtoOnYouPalette(yellow2);">Add Color</button>
+        <button class = "season" style = "background-color: #FFCD00" onclick="AddtoOnYouPalette(yellow3);">Add Color</button>
+        <button class = "season" style = "background-color: #FFB81C" onclick="AddtoOnYouPalette(yellow4);">Add Color</button>
+        <button class = "season" style = "background-color: #FDAA63" onclick="AddtoOnYouPalette(yellow5);">Add Color</button>
+        <button class = "season" style = "background-color: #FF8200" onclick="AddtoOnYouPalette(yellow6);">Add Color</button>
+        <button class = "season" style = "background-color: #FF8D6D" onclick="AddtoOnYouPalette(yellow7);">Add Color</button>
+        <button class = "season" style = "background-color: #DA291C" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #E40046" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #D539B5" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #A77BCA" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #963CBD" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #84329B" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #00558C" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #007FA3" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #0087AE" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #008EAA" onclick="AddtoOnYouPalette(blue4);">Add Color</button>
+        <button class = "season" style = "background-color: #00A499" onclick="AddtoOnYouPalette(blue5);">Add Color</button>
+        <button class = "season" style = "background-color: #77C5D5" onclick="AddtoOnYouPalette(blue6);">Add Color</button>
+        <button class = "season" style = "background-color: #D0DF00" onclick="AddtoOnYouPalette(yellow8);">Add Color</button>
+        <button class = "season" style = "background-color: #A6631B" onclick="AddtoOnYouPalette(pink7);">Add Color</button>
+        <button class = "season" style = "background-color: #BE5400" onclick="AddtoOnYouPalette(pink8);">Add Color</button>
+        <button class = "season" style = "background-color: #5C462B" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+        <button class = "season" style = "background-color: #453536" onclick="AddtoOnYouPalette(grey2);">Add Color</button>
+
+            
+        <h3>Warm Spring</h3>
+        <!--  var yellow = "#FCE300";
+        var yellow2 = "#FDD26E";
+        var yellow3 = "#FFCD00";
+        var yellow4 = "#FFB81C";
+        var yellow5 = "#F0B323";
+        var yellow6 = "#D4C304";
+        var yellow7 = "#C4D600";
+        var yellow8 = "#A9C23F";
+        var yellow9 = "#A8AD00";
+        var yellow10 = "#74AA50";
+        var yellow11 = "#6CC24A";
+        var blue = "#009F4D";
+        var blue2 = "#00A499";
+        var blue3 = "#2DCCD3";
+        var green = "#6DCDB8";
+        var pink = "#9595D2";
+        var pink2 = "#963CBD";
+        var pink3 = "#DA291C";
+        var pink4 = "#B46A55";
+        var pink5 = "#EC5037";
+        var pink6 = "#A6631B";
+        var yellow12 = "#FF8200";
+        var yellow13 = "#FF8F1C";
+        var yellow14 = "#FDAA63";
+        var yellow15 = "#FFA38B";
+-->
+        <button class = "season" style = "background-color: #FCE300" onclick="AddtoOnYouPalette(yellow);">Add Color</button>
+        <button class = "season" style = "background-color: #FDD26E" onclick="AddtoOnYouPalette(yellow2);">Add Color</button>
+        <button class = "season" style = "background-color: #FFCD00" onclick="AddtoOnYouPalette(yellow3);">Add Color</button>
+        <button class = "season" style = "background-color: #FFB81C" onclick="AddtoOnYouPalette(yellow4);">Add Color</button>
+        <button class = "season" style = "background-color: #F0B323" onclick="AddtoOnYouPalette(yellow5);">Add Color</button>
+        <button class = "season" style = "background-color: #D4C304" onclick="AddtoOnYouPalette(yellow6);">Add Color</button>
+        <button class = "season" style = "background-color: #C4D600" onclick="AddtoOnYouPalette(yellow7);">Add Color</button>
+        <button class = "season" style = "background-color: #A9C23F" onclick="AddtoOnYouPalette(yellow8);">Add Color</button>
+        <button class = "season" style = "background-color: #A8AD00" onclick="AddtoOnYouPalette(yellow9);">Add Color</button>
+        <button class = "season" style = "background-color: #74AA50" onclick="AddtoOnYouPalette(yellow10);">Add Color</button>
+        <button class = "season" style = "background-color: #6CC24A" onclick="AddtoOnYouPalette(yellow11);">Add Color</button>
+        <button class = "season" style = "background-color: #009F4D" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #00A499" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #2DCCD3" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #6DCDB8" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        <button class = "season" style = "background-color: #9595D2" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #963CBD" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #DA291C" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #B46A55" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #EC5037" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #A6631B" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #FF8200" onclick="AddtoOnYouPalette(yellow12);">Add Color</button>
+        <button class = "season" style = "background-color: #FF8F1C" onclick="AddtoOnYouPalette(yellow13);">Add Color</button>
+        <button class = "season" style = "background-color: #FDAA63" onclick="AddtoOnYouPalette(yellow14);">Add Color</button>
+        <button class = "season" style = "background-color: #FFA38B" onclick="AddtoOnYouPalette(yellow15);">Add Color</button>
+
+
+        <h3>Light Spring</h3>
+        <button class = "season" style = "background-color: #FFF9D7" onclick="AddtoOnYouPalette(white2);">Add Color</button>
+        <button class = "season" style = "background-color: #FCE300" onclick="AddtoOnYouPalette(yellow);">Add Color</button>
+        <button class = "season" style = "background-color: #FDD26E" onclick="AddtoOnYouPalette(yellow2);">Add Color</button>
+        <button class = "season" style = "background-color: #FFCD00" onclick="AddtoOnYouPalette(yellow3);">Add Color</button>
+        <button class = "season" style = "background-color: #FFB81C" onclick="AddtoOnYouPalette(yellow4);">Add Color</button>
+        <button class = "season" style = "background-color: #F0B323" onclick="AddtoOnYouPalette(yellow5);">Add Color</button>
+        <button class = "season" style = "background-color: #D4C304" onclick="AddtoOnYouPalette(yellow6);">Add Color</button>
+        <button class = "season" style = "background-color: #C4D600" onclick="AddtoOnYouPalette(yellow7);">Add Color</button>
+        <button class = "season" style = "background-color: #A9C23F" onclick="AddtoOnYouPalette(yellow8);">Add Color</button>
+        <button class = "season" style = "background-color: #A8AD00" onclick="AddtoOnYouPalette(yellow9);">Add Color</button>
+        <button class = "season" style = "background-color: #74AA50" onclick="AddtoOnYouPalette(yellow10);">Add Color</button>
+        <button class = "season" style = "background-color: #6CC24A" onclick="AddtoOnYouPalette(yellow11);">Add Color</button>
+        <button class = "season" style = "background-color: #009F4D" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #00A499" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #2DCCD3" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #6DCDB8" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        <button class = "season" style = "background-color: #9595D2" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #963CBD" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #DA291C" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #B46A55" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #EC5037" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #A6631B" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #FF8200" onclick="AddtoOnYouPalette(yellow12);">Add Color</button>
+        <button class = "season" style = "background-color: #FF8F1C" onclick="AddtoOnYouPalette(yellow13);">Add Color</button>
+        <button class = "season" style = "background-color: #FDAA63" onclick="AddtoOnYouPalette(yellow14);">Add Color</button>
+        <button class = "season" style = "background-color: #FFA38B" onclick="AddtoOnYouPalette(yellow15);">Add Color</button>
+
+
+        <h3 style = "font-weight: bold">Autumn</h3>
+
+        <h3>Warm Autumn</h3>
+        <!--  var yellow = "#FFCD00";
+        var grey = "#B4A91F";
+        var grey2 = "#B89D18";
+        var yellow2 = "#A09958";
+        var yellow3 = "#8F993E";
+        var yellow4 = "#5E7E29";
+        var grey3 = "#7A7256";
+        var yellow5 = "#A07400";
+        var pink = "#A6631B";
+        var grey4 = "#946037";
+        var grey5 = "#9D4815";
+        var grey6 = "#7C4D3A";
+        var grey7 = "#9A3324";
+        var grey8 = "#5C462B";
+        var pink2 = "#C4622D";
+        var pink3 = "#EC5037";
+        var pink4 = "#EF7200";
+        var pink5 = "#F68D2E";
+        var pink6 = "#D69A2D";
+        var blue = "#6BCABA";
+        var blue2 = "#00BFB3";
+        var blue3 = "#009F4D";
+        var blue4 = "#00778B";
+        var blue5 = "#046A38";
+        var blue6 = "#205C40";-->
+        <button class = "season" style = "background-color: #FFCD00" onclick="AddtoOnYouPalette(yellow);">Add Color</button>
+        <button class = "season" style = "background-color: #B4A91F" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+        <button class = "season" style = "background-color: #B89D18" onclick="AddtoOnYouPalette(grey2);">Add Color</button>
+        <button class = "season" style = "background-color: #A09958" onclick="AddtoOnYouPalette(yellow2);">Add Color</button>
+        <button class = "season" style = "background-color: #8F993E" onclick="AddtoOnYouPalette(yellow3);">Add Color</button>
+        <button class = "season" style = "background-color: #5E7E29" onclick="AddtoOnYouPalette(yellow4);">Add Color</button>
+        <button class = "season" style = "background-color: #7A7256" onclick="AddtoOnYouPalette(grey3);">Add Color</button>
+        <button class = "season" style = "background-color: #A07400" onclick="AddtoOnYouPalette(yellow5);">Add Color</button>
+        <button class = "season" style = "background-color: #A6631B" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #946037" onclick="AddtoOnYouPalette(grey4);">Add Color</button>
+        <button class = "season" style = "background-color: #9D4815" onclick="AddtoOnYouPalette(grey5);">Add Color</button>
+        <button class = "season" style = "background-color: #7C4D3A" onclick="AddtoOnYouPalette(grey6);">Add Color</button>
+        <button class = "season" style = "background-color: #9A3324" onclick="AddtoOnYouPalette(grey7);">Add Color</button>
+        <button class = "season" style = "background-color: #5C462B" onclick="AddtoOnYouPalette(grey8);">Add Color</button>
+        <button class = "season" style = "background-color: #C4622D" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #EC5037" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #EF7200" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #F68D2E" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #D69A2D" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #6BCABA" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #00BFB3" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #009F4D" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #00778B" onclick="AddtoOnYouPalette(blue4);">Add Color</button>
+        <button class = "season" style = "background-color: #046A38" onclick="AddtoOnYouPalette(blue5);">Add Color</button>
+        <button class = "season" style = "background-color: #205C40" onclick="AddtoOnYouPalette(blue6);">Add Color</button>
+        
+
+        <h3>Deep Autumn</h3>
+        <!-- var yellow = "#C4D600";
+        var yellow2 = "#DAAA00";
+        var pink = "#FF8200";
+        var pink2 = "#C4622D";
+        var pink3 = "#BE4D00";
+        var pink4 = "#EC5037";
+        var grey = "#7C4D3A";
+        var grey2 = "#9A3324";
+        var grey3 = "#63513D";
+        var grey4 = "#5C462B";
+        var grey5 = "#5D6439";
+        var grey6 = "#67823A";
+        var blue = "#009F4D";
+        var blue2 = "#00A3AD";
+        var blue3 = "#0087AE";
+        var blue4 = "#007FA3";
+        var blue5 = "#007680";
+        var blue6 = "#005A70";
+        var pink5 = "#963CBD";
+        var pink6 = "#890C58";
+        var grey7 = "#643335";
+        var grey8 = "#7C2529";
+        var pink7 = "#5C068C";
+        var yellow3 = "#A07400";
+        var green = "#00594C";-->
+        <button class = "season" style = "background-color: #C4D600" onclick="AddtoOnYouPalette(yellow);">Add Color</button>
+        <button class = "season" style = "background-color: #DAAA00" onclick="AddtoOnYouPalette(yellow2);">Add Color</button>
+        <button class = "season" style = "background-color: #FF8200" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #C4622D" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #BE4D00" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #EC5037" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #7C4D3A" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+        <button class = "season" style = "background-color: #9A3324" onclick="AddtoOnYouPalette(grey2);">Add Color</button>
+        <button class = "season" style = "background-color: #63513D" onclick="AddtoOnYouPalette(grey3);">Add Color</button>
+        <button class = "season" style = "background-color: #5C462B" onclick="AddtoOnYouPalette(grey4);">Add Color</button>
+        <button class = "season" style = "background-color: #5D6439" onclick="AddtoOnYouPalette(grey5);">Add Color</button>
+        <button class = "season" style = "background-color: #67823A" onclick="AddtoOnYouPalette(grey6);">Add Color</button>
+        <button class = "season" style = "background-color: #009F4D" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #00A3AD" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #0087AE" onclick="AddtoOnYouPalette(blue3);">Add Color</button>
+        <button class = "season" style = "background-color: #007FA3" onclick="AddtoOnYouPalette(blue4);">Add Color</button>
+        <button class = "season" style = "background-color: #007680" onclick="AddtoOnYouPalette(blue5);">Add Color</button>
+        <button class = "season" style = "background-color: #005A70" onclick="AddtoOnYouPalette(blue6);">Add Color</button>
+        <button class = "season" style = "background-color: #963CBD" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
+        <button class = "season" style = "background-color: #890C58" onclick="AddtoOnYouPalette(pink6);">Add Color</button>
+        <button class = "season" style = "background-color: #643335" onclick="AddtoOnYouPalette(grey7);">Add Color</button>
+        <button class = "season" style = "background-color: #7C2529" onclick="AddtoOnYouPalette(grey8);">Add Color</button>
+        <button class = "season" style = "background-color: #5C068C" onclick="AddtoOnYouPalette(pink7);">Add Color</button>
+        <button class = "season" style = "background-color: #A07400" onclick="AddtoOnYouPalette(yellow3);">Add Color</button>
+        <button class = "season" style = "background-color: #00594C" onclick="AddtoOnYouPalette(green);">Add Color</button>
+        
+        <h3>Soft Autumn</h3>
+        <!-- var yellow = "#F5E1A4";
+        var yellow2 = "#FCD299";
+        var yellow3 = "#DFD1A7";
+        var yellow4 = "#BBC592";
+        var yellow5 = "#A3AA83";
+        var yellow6 = "#A09958";
+        var grey = "#899064";
+        var grey2 = "#94795D";
+        var grey3 = "#B58150";
+        var grey4 = "#DB864E";
+        var grey5 = "#AE8A79";
+        var grey6 = "#C26E60";
+        var grey7 = "#956C58";
+        var grey8 = "#946037";
+        var pink = "#C05131";
+        var grey9 = "#7C4D3A";
+        var grey10 = "#52463F";
+        var grey11 = "#487A7B";
+        var grey12 = "#507F70";
+        var blue = "#009F4D";
+        var blue2 = "#6BCABA";
+        var pink2 = "#CDA788";
+        var pink3 = "#D9B48F";
+        var pink4 = "#FDAA63";
+        var pink5 = "#CBA052";-->
+        
+        <button class = "season" style = "background-color: #F5E1A4" onclick="AddtoOnYouPalette(yellow);">Add Color</button>
+        <button class = "season" style = "background-color: #FCD299" onclick="AddtoOnYouPalette(yellow2);">Add Color</button>
+        <button class = "season" style = "background-color: #DFD1A7" onclick="AddtoOnYouPalette(yellow3);">Add Color</button>
+        <button class = "season" style = "background-color: #BBC592" onclick="AddtoOnYouPalette(yellow4);">Add Color</button>
+        <button class = "season" style = "background-color: #A3AA83" onclick="AddtoOnYouPalette(yellow5);">Add Color</button>
+        <button class = "season" style = "background-color: #A09958" onclick="AddtoOnYouPalette(yellow6);">Add Color</button>
+        <button class = "season" style = "background-color: #899064" onclick="AddtoOnYouPalette(grey);">Add Color</button>
+        <button class = "season" style = "background-color: #94795D" onclick="AddtoOnYouPalette(grey2);">Add Color</button>
+        <button class = "season" style = "background-color: #B58150" onclick="AddtoOnYouPalette(grey3);">Add Color</button>
+        <button class = "season" style = "background-color: #DB864E" onclick="AddtoOnYouPalette(grey4);">Add Color</button>
+        <button class = "season" style = "background-color: #AE8A79" onclick="AddtoOnYouPalette(grey5);">Add Color</button>
+        <button class = "season" style = "background-color: #C26E60" onclick="AddtoOnYouPalette(grey6);">Add Color</button>
+        <button class = "season" style = "background-color: #956C58" onclick="AddtoOnYouPalette(grey7);">Add Color</button>
+        <button class = "season" style = "background-color: #946037" onclick="AddtoOnYouPalette(grey8);">Add Color</button>
+        <button class = "season" style = "background-color: #C05131" onclick="AddtoOnYouPalette(pink);">Add Color</button>
+        <button class = "season" style = "background-color: #7C4D3A" onclick="AddtoOnYouPalette(grey9);">Add Color</button>
+        <button class = "season" style = "background-color: #52463F" onclick="AddtoOnYouPalette(grey10);">Add Color</button>
+        <button class = "season" style = "background-color: #487A7B" onclick="AddtoOnYouPalette(grey11);">Add Color</button>
+        <button class = "season" style = "background-color: #507F70" onclick="AddtoOnYouPalette(grey12);">Add Color</button>
+        <button class = "season" style = "background-color: #009F4D" onclick="AddtoOnYouPalette(blue);">Add Color</button>
+        <button class = "season" style = "background-color: #6BCABA" onclick="AddtoOnYouPalette(blue2);">Add Color</button>
+        <button class = "season" style = "background-color: #CDA788" onclick="AddtoOnYouPalette(pink2);">Add Color</button>
+        <button class = "season" style = "background-color: #D9B48F" onclick="AddtoOnYouPalette(pink3);">Add Color</button>
+        <button class = "season" style = "background-color: #FDAA63" onclick="AddtoOnYouPalette(pink4);">Add Color</button>
+        <button class = "season" style = "background-color: #CBA052" onclick="AddtoOnYouPalette(pink5);">Add Color</button>
 
 
 
@@ -149,12 +1097,14 @@
             // Update local storage with the new palette array
             localStorage.setItem('OnYouPalette', JSON.stringify(OnYouPalette));
 
-            //create div for color
-            var div = document.createElement("div");
-            div.style.backgroundColor = color;
-            div.style.width = "100px";
-            div.style.height = "100px";
-            document.body.appendChild(div);
+            
+             //create div for color
+           // var div = document.createElement("div");
+            //div.style.backgroundColor = color;
+            //div.style.width = "100px";
+            //div.style.height = "100px";
+            //document.body.appendChild(div); 
+            
 
             }
 
