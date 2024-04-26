@@ -130,31 +130,33 @@
         
         var bool=confirm("Are you sure?");
 
-        /*if the user clicked ok execute the following*/
-        if(bool==true){
-            if (InBrandingPalette == null){
-                InBrandingPalette = [];
-            } 
-            else {
-                InBrandingPalette = JSON.parse(localStorage.getItem("InBrandingPalette"));
-            }
+            /*if the user clicked ok execute the following*/
+            if(bool==true){
+                if (InBrandingPalette == null){
+                    InBrandingPalette = [];
+                } 
+                else {
+                    InBrandingPalette = JSON.parse(localStorage.getItem("InBrandingPalette"));
+                }
 
-            //add color to palette
-            InBrandingPalette.push(color);
+                //add color to palette
+                InBrandingPalette.push(color);
 
-            // Update local storage with the new palette array
-            localStorage.setItem('InBrandingPalette', JSON.stringify(InBrandingPalette));
+                // Update local storage with the new palette array
+                localStorage.setItem('InBrandingPalette', JSON.stringify(InBrandingPalette));
 
-            //create div for color
-            var div = document.createElement("div");
-            div.style.backgroundColor = color;
-            div.style.width = "100px";
-            div.style.height = "100px";
-            document.body.appendChild(div);
+                //create div for color
+                var div = document.createElement("div");
+                div.style.backgroundColor = color;
+                div.style.width = "100px";
+                div.style.height = "100px";
+                document.body.appendChild(div);
 
-            }
+                }
+        }
+        
 
-            function setActiveButton(activeButtonId) {
+        function setActiveButton(activeButtonId) {
                 // Get all buttons
                 var buttons = document.querySelectorAll('.button-container button');
 
@@ -166,8 +168,8 @@
                 // Add .active to the clicked button
                 document.getElementById(activeButtonId).classList.add('active');
                 
-            }
         }
+    
 
     </script>
 
