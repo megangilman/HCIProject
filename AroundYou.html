@@ -129,37 +129,45 @@
             setActiveButton("overview-button");
         }
 
-        function AddtoAroundYouPalette(color) {
+            function AddtoAroundYouPalette(color) {
+                                // Confirm with the user
+                                var bool = confirm("Are you sure?");
 
-        var bool=confirm("Are you sure?");
+                // If the user clicked ok, execute the following
+                if (bool) {
+                    // Try to get the InBrandingPalette from local storage or initialize it if it doesn't exist
+                    var AroundYouPalette = JSON.parse(localStorage.getItem("AroundYouPalette")) || [];
 
-        /*if the user clicked ok execute the following*/
-        if(bool==true){
+                    // Add color to the palette
+                    AroundYouPalette.push(color);
 
-            //Around you palette has different code than the others for ensuring the null case is handled (testing)
+                    // Update local storage with the new palette array
+                    localStorage.setItem('AroundYouPalette', JSON.stringify(AroundYouPalette));
 
-            // Initialize or retrieve the current palette from localStorage
-            var storedPalette = localStorage.getItem("AroundYouPalette");
-            AroundYouPalette = storedPalette ? JSON.parse(storedPalette) : [];
-
-            // Add color to palette array
-            AroundYouPalette.push(color);
-
-            // Update local storage
-            localStorage.setItem('AroundYouPalette', JSON.stringify(AroundYouPalette));
-            
-            //display pop up message on screen confirming color has been added 
-            alert("Color added to Around you palette! Visit the Palettes page to view your palette.");
+                    // Create div for color
+                    var div = document.createElement("div");
+                    div.style.backgroundColor = color;
+                    div.style.width = "100px";
+                    div.style.height = "100px";
+                    document.body.appendChild(div);
 
 
-            //create div for color
-           // var div = document.createElement("div");
-            //div.style.backgroundColor = color;
-            //div.style.width = "100px";
-           // div.style.height = "100px";
-            //document.body.appendChild(div);
+                //display pop up message on screen confirming color has been added 
+                alert("Color added to Around you palette! Visit the Palettes page to view your palette.");
+
+
+                    //create div for color
+                // var div = document.createElement("div");
+                    //div.style.backgroundColor = color;
+                    //div.style.width = "100px";
+                // div.style.height = "100px";
+                    //document.body.appendChild(div);
 
             }
+            
+                
+
+            
 
             function setActiveButton(activeButtonId) {
                 // Get all buttons
@@ -173,7 +181,10 @@
                 // Add .active to the clicked button
                 document.getElementById(activeButtonId).classList.add('active');
             }
+            
         }
+    
+
 
 
 

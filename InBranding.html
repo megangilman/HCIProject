@@ -67,34 +67,35 @@
         <p>Color is a powerful tool in marketing and branding. It can influence consumer perceptions, emotions, and behaviors. Different colors can evoke different feelings and associations. For example, red is often associated with passion, energy, and excitement, while blue is associated with trust, reliability, and calmness. Companies use color to create brand identities, communicate messages, and attract customers. The choice of color in branding can have a significant impact on consumer attitudes and purchasing decisions.</p>
 
         <h3>Red</h3>
-        <button class = "marketing" style = "background-color: #E15759"; onclick="AddtoAroundYouPalette(red);">Add Color</button>
+        <button class = "marketing" style = "background-color: #E15759"; onclick="AddtoInBrandingPalette(red);">Add Color</button>
 
         <h3>Orange</h3>
-        <button class = "marketing" style = "background-color: #F28E2B"; onclick="AddtoAroundYouPalette(orange);">Add Color</button>
+        <button class = "marketing" style = "background-color: #F28E2B"; onclick="AddtoInBrandingPalette(orange);">Add Color</button>
+        
 
         <h3>Yellow</h3>
-        <button class = "marketing" style = "background-color: #F1CE63"; onclick="AddtoAroundYouPalette(yellow);">Add Color</button>
+        <button class = "marketing" style = "background-color: #F1CE63"; onclick="AddtoInBrandingPalette(yellow);">Add Color</button>
 
         <h3>Pink</h3>
-        <button class = "marketing" style = "background-color: #ffd1f3"; onclick="AddtoAroundYouPalette(pink);">Add Color</button>
+        <button class = "marketing" style = "background-color: #ffd1f3"; onclick="AddtoInBrandingPalette(pink);">Add Color</button>
 
         <h3>Blue</h3>
-        <button class = "marketing" style = "background-color: #4E79A7"; onclick="AddtoAroundYouPalette(blue);">Add Color</button>
+        <button class = "marketing" style = "background-color: #4E79A7"; onclick="AddtoInBrandingPalette(blue);">Add Color</button>
 
         <h3>Green</h3>
-        <button class = "marketing" style = "background-color: #59A14F"; onclick="AddtoAroundYouPalette(green);">Add Color</button>
+        <button class = "marketing" style = "background-color: #59A14F"; onclick="AddtoInBrandingPalette(green);">Add Color</button>
 
         <h3>Purple</h3>
-        <button class = "marketing" style = "background-color: #d595ec"; onclick="AddtoAroundYouPalette(purple);">Add Color</button>
+        <button class = "marketing" style = "background-color: #d595ec"; onclick="AddtoInBrandingPalette(purple);">Add Color</button>
 
         <h3>Brown</h3>
-        <button class = "marketing" style = "background-color: #9D7660"; onclick="AddtoAroundYouPalette(brown);">Add Color</button>
+        <button class = "marketing" style = "background-color: #9D7660"; onclick="AddtoInBrandingPalette(brown);">Add Color</button>
 
         <h3>Gray</h3>
-        <button class = "marketing" style = "background-color: #BEBEBE"; onclick="AddtoAroundYouPalette(gray);">Add Color</button>
+        <button class = "marketing" style = "background-color: #BEBEBE"; onclick="AddtoInBrandingPalette(gray);">Add Color</button>
 
         <h3>Black</h3>
-        <button class = "marketing" style = "background-color: #000000"; onclick="AddtoAroundYouPalette(black);">Add Color</button>
+        <button class = "marketing" style = "background-color: #000000"; onclick="AddtoInBrandingPalette(black);">Add Color</button>
 
     </container>
    
@@ -127,32 +128,27 @@
         }
 
         function AddtoInBrandingPalette(color) {
-        
-        var bool=confirm("Are you sure?");
+            // Confirm with the user
+            var bool = confirm("Are you sure?");
 
-            /*if the user clicked ok execute the following*/
-            if(bool==true){
-                if (InBrandingPalette == null){
-                    InBrandingPalette = [];
-                } 
-                else {
-                    InBrandingPalette = JSON.parse(localStorage.getItem("InBrandingPalette"));
-                }
+            // If the user clicked ok, execute the following
+            if (bool) {
+                // Try to get the InBrandingPalette from local storage or initialize it if it doesn't exist
+                var InBrandingPalette = JSON.parse(localStorage.getItem("InBrandingPalette")) || [];
 
-                //add color to palette
+                // Add color to the palette
                 InBrandingPalette.push(color);
 
                 // Update local storage with the new palette array
                 localStorage.setItem('InBrandingPalette', JSON.stringify(InBrandingPalette));
 
-                //create div for color
+                // Create div for color
                 var div = document.createElement("div");
                 div.style.backgroundColor = color;
                 div.style.width = "100px";
                 div.style.height = "100px";
                 document.body.appendChild(div);
-
-                }
+            }
         }
         
 
