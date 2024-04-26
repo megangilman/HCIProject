@@ -10,13 +10,17 @@
 
     <script>
         var AroundYouPalette = [];
-        var blue = "blue";
-        var red = "red";
-        var green = "green";
-        var yellow = "yellow";
-        var orange = "orange";
-        var purple = "purple";
-        var pink = "pink";
+        var red = "#E15759";
+        var orange = "#F28E2B";
+        var yellow = "#F1CE63";
+        var pink = "#ffd1f3";
+        var blue = "#4E79A7";
+        var green = "#59A14F";
+        var purple = "d595ec";
+        var brown = "#9D7660";
+        var gray = "#BEBEBE";
+        var black = "#000000";
+
     </script>
 
 </head>
@@ -52,24 +56,47 @@
 
     <container id="overview">
         <h2>Color Overview</h2>
-        <p>Color is a visual perceptual property derived from the spectrum of light interacting in the eye with the spectral sensitivities of the light receptors. Color categories and physical specifications of color are associated with objects through the wavelength of the light that is reflected, transmitted, or emitted. This reflection is governed by the object's physical properties such as light absorption, emission spectra, etc.</p>
+        <p>Using color in rooms can impact the experience of a person in that space. A lot of research has been done in this realm to uncover the phycological effects the colors present in a room has on someone. Research has uncovered trends in varying colors affecting both the physical and emotional state of someone. Furthermore reserarch has identified which colors are best implemented in different types of spaces. To learn more explore the Color in Spaces page. 
+        </p>
     </container>
 
     <container id="spaces">
         <h2>Color in Spaces</h2>
         <p>Color in spaces is a design element that can influence the mood and perception of a space. The color of a room can affect the way people feel and behave. For example, warm colors like red, orange, and yellow can create a cozy and intimate atmosphere, while cool colors like blue and green can create a calm and relaxing environment. Color can also be used to define different areas within a space, create focal points, and highlight architectural features.</p>
 
+        <h3>Red</h3>
+        <button class = "spaces" style = "background-color: #E15759"; onclick="AddtoAroundYouPalette(red);">Add Color</button>
+
+        <h3>Orange</h3>
+        <button class = "spaces" style = "background-color: #F28E2B"; onclick="AddtoAroundYouPalette(orange);">Add Color</button>
+
+        <h3>Yellow</h3>
+        <button class = "spaces" style = "background-color: #F1CE63"; onclick="AddtoAroundYouPalette(yellow);">Add Color</button>
+
         <h3>Pink</h3>
-        <button class = "spaces" onclick="AddtoAroundYouPalette(pink);">Add Color</button>
+        <button class = "spaces" style = "background-color: #ffd1f3"; onclick="AddtoAroundYouPalette(pink);">Add Color</button>
 
         <h3>Blue</h3>
-        <button class = "spaces" onclick="AddtoAroundYouPalette(blue);">Add Color</button>
-
-        <h3>Red</h3>
-        <button class = "spaces" onclick="AddtoAroundYouPalette(red);">Add Color</button>
+        <button class = "spaces" style = "background-color: #4E79A7"; onclick="AddtoAroundYouPalette(blue);">Add Color</button>
 
         <h3>Green</h3>
-        <button class = "spaces" onclick="AddtoAroundYouPalette(green);">Add Color</button>
+        <button class = "spaces" style = "background-color: #59A14F"; onclick="AddtoAroundYouPalette(green);">Add Color</button>
+
+        <h3>Purple</h3>
+        <button class = "spaces" style = "background-color: #d595ec"; onclick="AddtoAroundYouPalette(purple);">Add Color</button>
+
+        <h3>Brown</h3>
+        <button class = "spaces" style = "background-color: #9D7660"; onclick="AddtoAroundYouPalette(brown);">Add Color</button>
+
+        <h3>Gray</h3>
+        <button class = "spaces" style = "background-color: #BEBEBE"; onclick="AddtoAroundYouPalette(gray);">Add Color</button>
+
+        <h3>Black</h3>
+        <button class = "spaces" style = "background-color: #000000"; onclick="AddtoAroundYouPalette(black);">Add Color</button>
+
+
+
+
 
     </container>
     
@@ -109,25 +136,28 @@
         /*if the user clicked ok execute the following*/
         if(bool==true){
 
-            if (AroundYouPalette == null){
-                AroundYouPalette = [];
-            } 
-            else {
-                AroundYouPalette = JSON.parse(localStorage.getItem("AroundYouPalette"));
-            }
+            //Around you palette has different code than the others for ensuring the null case is handled (testing)
 
-            //add color to palette
+            // Initialize or retrieve the current palette from localStorage
+            var storedPalette = localStorage.getItem("AroundYouPalette");
+            AroundYouPalette = storedPalette ? JSON.parse(storedPalette) : [];
+
+            // Add color to palette array
             AroundYouPalette.push(color);
 
-            // Update local storage with the new palette array
+            // Update local storage
             localStorage.setItem('AroundYouPalette', JSON.stringify(AroundYouPalette));
+            
+            //display pop up message on screen confirming color has been added 
+            alert("Color added to Around you palette! Visit the Palettes page to view your palette.");
+
 
             //create div for color
-            var div = document.createElement("div");
-            div.style.backgroundColor = color;
-            div.style.width = "100px";
-            div.style.height = "100px";
-            document.body.appendChild(div);
+           // var div = document.createElement("div");
+            //div.style.backgroundColor = color;
+            //div.style.width = "100px";
+           // div.style.height = "100px";
+            //document.body.appendChild(div);
 
             }
 
@@ -144,6 +174,7 @@
                 document.getElementById(activeButtonId).classList.add('active');
             }
         }
+
 
 
 
